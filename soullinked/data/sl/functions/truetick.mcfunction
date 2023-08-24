@@ -21,10 +21,17 @@ execute as @e[tag=spherecenter] store result entity @s Pos[0] double 1 run score
 execute as @e[tag=spherecenter] store result entity @s Pos[1] double 1 run scoreboard players get !standy SL
 execute as @e[tag=spherecenter] store result entity @s Pos[2] double 1 run scoreboard players get !standz SL
 
-execute as @e[tag=spherecenter] at @s run damage @a[distance=15..,limit=1, sort=random] 3 outside_border
+execute as @e[tag=spherecenter] if score !hurtdist SL matches 5 at @s run damage @a[distance=5..,limit=1, sort=random] 3 outside_border
+execute as @e[tag=spherecenter] if score !hurtdist SL matches 10 at @s run damage @a[distance=10..,limit=1, sort=random] 3 outside_border
+execute as @e[tag=spherecenter] if score !hurtdist SL matches 15 at @s run damage @a[distance=15..,limit=1, sort=random] 3 outside_border
+execute as @e[tag=spherecenter] if score !hurtdist SL matches 20 at @s run damage @a[distance=20..,limit=1, sort=random] 3 outside_border
+execute as @e[tag=spherecenter] if score !hurtdist SL matches 25 at @s run damage @a[distance=25..,limit=1, sort=random] 3 outside_border
+execute as @e[tag=spherecenter] if score !hurtdist SL matches 30 at @s run damage @a[distance=30..,limit=1, sort=random] 3 outside_border
+execute as @e[tag=spherecenter] if score !hurtdist SL matches 40 at @s run damage @a[distance=40..,limit=1, sort=random] 3 outside_border
+execute as @e[tag=spherecenter] if score !hurtdist SL matches 50 at @s run damage @a[distance=50..,limit=1, sort=random] 3 outside_border
 
-execute as @a[scores={deathcheck=1..}] run scoreboard players add @s deaths 1
-execute as @a[scores={deathcheck=1..}] run kill @a
+execute as @a[scores={deathcheck=1..}] if score !blameon SL matches 1 run scoreboard players add @s deaths 1
+execute as @a[scores={deathcheck=1..}] if score !dieon SL mathces 1 run kill @a
 execute as @a[scores={deathcheck=1..}] run scoreboard players set @a deathcheck 0
 
 execute store result score !overplayers SL if entity @a[nbt={Dimension:"minecraft:overworld"}]
