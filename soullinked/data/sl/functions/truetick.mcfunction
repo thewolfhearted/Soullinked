@@ -42,27 +42,3 @@ execute as @e[tag=spherecenter] at @s if score !netherplayers SL > !overplayers 
 execute as @e[tag=spherecenter] at @s if score !overplayers SL >= !netherplayers SL if score !overplayers SL > !endplayers SL unless dimension overworld run tp @r[nbt={Dimension:"minecraft:overworld"}]
 execute as @e[tag=spherecenter] at @s if score !endplayers SL >= !overplayers SL if score !endplayers SL >= !netherplayers SL unless dimension the_end run tp @r[nbt={Dimension:"minecraft:the_end"}]
 
-scoreboard players set @a[scores={whitebed=1}] spawncheck 1
-scoreboard players set @a[scores={orangebed=1}] spawncheck 1
-scoreboard players set @a[scores={magentabed=1}] spawncheck 1
-scoreboard players set @a[scores={lbluebed=1}] spawncheck 1
-scoreboard players set @a[scores={yellowbed=1}] spawncheck 1
-scoreboard players set @a[scores={limebed=1}] spawncheck 1
-scoreboard players set @a[scores={pinkbed=1}] spawncheck 1
-scoreboard players set @a[scores={graybed=1}] spawncheck 1
-scoreboard players set @a[scores={lgraybed=1}] spawncheck 1
-scoreboard players set @a[scores={cyanbed=1}] spawncheck 1
-scoreboard players set @a[scores={purplebed=1}] spawncheck 1
-scoreboard players set @a[scores={bluebed=1}] spawncheck 1
-scoreboard players set @a[scores={brownbed=1}] spawncheck 1
-scoreboard players set @a[scores={greenbed=1}] spawncheck 1
-scoreboard players set @a[scores={redbed=1}] spawncheck 1
-scoreboard players set @a[scores={blackbed=1}] spawncheck 1
-
-execute as @a[scores={spawncheck=1}] at @s if dimension overworld run setworldspawn ~ ~ ~ 
-execute as @a[scores={spawncheck=1}] if dimension overworld run tellraw @a {"color": "lime","extra": [{"selector":"@s"}],"text": "has set everyone's spawn!"}
-scoreboard players reset @a spawncheck
-
-execute as @a[scores={anchorcheck=1}] at @s if dimension the_nether run setworldspawn ~ ~ ~ 
-execute as @a[scores={anchorcheck=1}] if dimension the_nether run tellraw @a {"color": "lime","extra": [{"selector":"@s"}],"text": "has set everyone's spawn!"}
-scoreboard players reset @a anchorcheck
