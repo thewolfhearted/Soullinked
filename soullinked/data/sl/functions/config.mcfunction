@@ -1,1 +1,10 @@
-
+tellraw @s {"text":"Soullink Configuration Settings","bold":true,"underlined":true,"color":"dark_green"}
+tellraw @s ""
+tellraw @s {"text":"Damage Distance:","bold":true,"hoverEvent":{"action":"show_text","contents":["How far away a player can get from the centerpoint before they start taking damage. Set to 15 by default."]}}
+tellraw @s ["",{"text":"[5] ","color":"dark_red","clickEvent":{"action":"run_command","value":"scoreboard players set !hurtdist SL 5"}},{"text":"[10]","color":"red","clickEvent":{"action":"run_command","value":"scoreboard players set !hurtdist SL 10"}},{"text":" [15]","color":"yellow","clickEvent":{"action":"run_command","value":"scoreboard players set !hurtdist SL 15"}},{"text":" [20]","color":"yellow","clickEvent":{"action":"run_command","value":"scoreboard players set !hurtdist SL 20"}},{"text":" [25]","color":"dark_green","clickEvent":{"action":"run_command","value":"scoreboard players set !hurtdist SL 25"}},{"text":" [30]","color":"dark_green","clickEvent":{"action":"run_command","value":"scoreboard players set !hurtdist SL 30"}},{"text":" [40]","color":"green","clickEvent":{"action":"run_command","value":"scoreboard players set !hurtdist SL 40"}},{"text":" [50]","color":"green","clickEvent":{"action":"run_command","value":"scoreboard players set !hurtdist SL 50"}}]
+tellraw @s ""
+tellraw @s {"text":"Blame Board:","bold":true,"hoverEvent":{"action":"show_text","contents":["A scoreboard to show who to blame for what deaths. Turned on by default."]}}
+tellraw @s ["",{"text":"[on]","color":"dark_green","clickEvent":{"action":"run_command","value":"scoreboard objectives setdisplay sidebar deaths"}},{"text":" [off]","color":"dark_red","clickEvent":{"action":"run_command","value":"scoreboard objectives setdisplay sidebar"}}]
+tellraw @s ""
+tellraw @s {"text":"Everyone Dies:","bold":true,"hoverEvent":{"action":"show_text","contents":["If one player dies, everyone dies. Turned on by default"]}}
+tellraw @s ["",{"text":"[on]","color":"dark_green","clickEvent":{"action":"run_command","value":"scoreboard players set !dieon SL 1"}},{"text":" [off]","color":"dark_red","clickEvent":{"action":"run_command","value":"scoreboard players set !dieon SL 0"}}]
