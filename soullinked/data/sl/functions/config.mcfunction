@@ -8,3 +8,6 @@ tellraw @s ["",{"text":"[on]","color":"dark_green","clickEvent":{"action":"run_c
 tellraw @s ""
 tellraw @s {"text":"Everyone Dies:","bold":true,"hoverEvent":{"action":"show_text","contents":["If one player dies, everyone dies. Turned on by default"]}}
 tellraw @s ["",{"text":"[on]","color":"dark_green","clickEvent":{"action":"run_command","value":"scoreboard players set !dieon SL 1"}},{"text":" [off]","color":"dark_red","clickEvent":{"action":"run_command","value":"scoreboard players set !dieon SL 0"}}]
+tellraw @s ""
+tellraw @s {"text":"Everyone Spawns","bold":true,"hoverEvent":{"action":"show_text","contents":["If one player sets their spawn, its set for everyone. On by default. HIGHLY RECCOMENDED TO LEAVE ON, CAN LEAD TO SOFTLOCKING WHEN OFF."]}}
+tellraw @s["",{"text":"[on]","color":"dark_green","clickEvent":{"action":"run_command","value":"scoreboard players set !allspawn SL 1"}},{"text":" [off]","color":"dark_red","clickEvent":{"action":"run_command","value":"scoreboard players set !allspawn SL 0"},"hoverEvent":{"action":"show_text","contents":["DANGER ZONE: TURNING THIS OFF CAN LEAD TO SOFTLOCKING."]}}]
