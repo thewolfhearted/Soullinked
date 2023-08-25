@@ -18,3 +18,4 @@ scoreboard objectives add spawnz dummy
 scoreboard objectives add oldspawnx dummy
 scoreboard objectives add oldspawny dummy
 scoreboard objectives add oldspawnz dummy
+scoreboard objectives add spawncheck dummy
