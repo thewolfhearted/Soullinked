@@ -10,6 +10,7 @@ scoreboard objectives add deaths dummy "Blame Board"
 execute unless score !setup SL matches 1 run scoreboard objectives setdisplay sidebar deaths
 execute unless score !setup SL matches 1 run scoreboard players set !hurtdist SL 15
 execute unless score !setup SL matches 1 run scoreboard players set !dieon SL 1
+execute unless score !setup SL matches 1 run scoreboard players set !allspawn SL 1
 scoreboard players set !setup SL 1
 
 scoreboard objectives add spawnx dummy
