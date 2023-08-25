@@ -49,8 +49,8 @@ execute as @a store result score @s spawnz run data get @s Spawnz 1
 execute as @a unless score @s spawnx = @s oldspawnx run scoreboard players set @s spawncheck 1
 execute as @a unless score @s spawny = @s oldspawny run scoreboard players set @s spawncheck 1
 execute as @a unless score @s spawnz = @s oldspawnz run scoreboard players set @s spawncheck 1
-execute as @a[scores={spawncheck=1}] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" has set the world spawn!","color":"green"}]
-execute as @a[scores={spawncheck=1}] run setworldspawn
+execute as @a[scores={spawncheck=1}] if score !allspawn SL matches 1 run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" has set the world spawn!","color":"green"}]
+execute as @a[scores={spawncheck=1}] if score !allspawn SL matches 1 run setworldspawn
 scoreboard players reset @a spawncheck
 
 execute as @a store result score @s oldspawnx run scoreboard players get @s spawnx
