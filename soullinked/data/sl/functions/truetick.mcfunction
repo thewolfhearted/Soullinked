@@ -42,3 +42,17 @@ execute as @e[tag=spherecenter] at @s if score !netherplayers SL > !overplayers 
 execute as @e[tag=spherecenter] at @s if score !overplayers SL >= !netherplayers SL if score !overplayers SL > !endplayers SL unless dimension overworld run tp @r[nbt={Dimension:"minecraft:overworld"}]
 execute as @e[tag=spherecenter] at @s if score !endplayers SL >= !overplayers SL if score !endplayers SL >= !netherplayers SL unless dimension the_end run tp @r[nbt={Dimension:"minecraft:the_end"}]
 
+execute as @a store result score @s spawnx run data get @s Spawnx 1
+execute as @a store result score @s spawny run data get @s Spawny 1
+execute as @a store result score @s spawnz run data get @s Spawnz 1
+
+execute as @a unless score @s spawnx = @s oldspawnx run scoreboard players set @s spawncheck 1
+execute as @a unless score @s spawny = @s oldspawny run scoreboard players set @s spawncheck 1
+execute as @a unless score @s spawnz = @s oldspawnz run scoreboard players set @s spawncheck 1
+execute as @a[scores={spawncheck=1}] run tellraw @a ["",{"selector":"@s","color":"green"},{"text":" has set the world spawn!","color":"green"}]
+execute as @a[scores={spawncheck=1}] run setworldspawn
+scoreboard players reset @a spawncheck
+
+execute as @a store result score @s oldspawnx run scoreboard players get @s spawnx
+execute as @a store result score @s oldspawny run scoreboard players get @s spawny
+execute as @a store result score @s oldspawnz run scoreboard players get @s spawnz
