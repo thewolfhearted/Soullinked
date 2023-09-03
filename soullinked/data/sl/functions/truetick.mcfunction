@@ -1,4 +1,4 @@
-execute unless entity @e[tag=spherecenter] run summon minecraft:armor_stand 0 100 0 {DisabledSlots:16191 ,ArmorItems:[{},{},{},{id:verdant_froglight,Count:1}], Small:1, Invisible:1, Invulnerable:1, Tags:["spherecenter"]}
+execute at @r unless entity @e[tag=spherecenter] run summon minecraft:armor_stand ~ ~ ~ {DisabledSlots:16191 ,ArmorItems:[{},{},{},{id:verdant_froglight,Count:1}], Small:1, Invisible:1, Invulnerable:1, Tags:["spherecenter"]}
 execute as @e[tag=spherecenter] run data modify entity @s Motion set value 0
 
 execute as @a store result score @s x run data get entity @s Pos[0] 1
